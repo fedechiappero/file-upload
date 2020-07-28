@@ -49,8 +49,8 @@ app.post('/api/upload', upload.single('image'), function (req, res) {
 });
 
 // GET files
-app.get('/api/getall', function (req, res) {
-  return res.sendFile('/image-1595728401201', { root: PATH });
+app.get('/api/:img', function (req, res) {
+  return res.sendFile('/'+req.params.img, { root: PATH });
 });
 
 // Create PORT
